@@ -7,6 +7,7 @@ const axios = require("axios"); // Import axios to make HTTP requests
 
 const authRoutes = require("./route/auth");
 const Farmerregister = require("./route/farmer_registaition");
+const Order = require("./route/order");
 
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(Farmerregister);
+app.use(Order);
 
 
 // Connect to MongoDB
