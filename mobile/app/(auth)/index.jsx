@@ -104,12 +104,12 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 250,
+    height: 450,
     resizeMode: 'contain',
-    marginBottom: 20,
+    marginBottom: 0,
   },
   submitbtn: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#000',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   createtext: {
-    color: '#21618c',
+    color: '#000',
     fontSize: 18,
   },
 });

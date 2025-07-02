@@ -69,8 +69,8 @@ export default function Signup() {
               <Text style={styles.text}>Submit</Text>
             </TouchableOpacity>
             <View style={styles.link}>
-              <Link href="/signup">
-                <Text style={styles.createtext}>Create New Account</Text>
+              <Link href="/(auth)">
+                <Text style={styles.createtext}>Log in my Account</Text>
               </Link>
             </View>
           </ScrollView>
@@ -101,12 +101,12 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 250,
+    height: 450,
     resizeMode: 'contain',
     marginBottom: 20,
   },
   submitbtn: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#000',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   createtext: {
-    color: '#21618c',
+    color: '#000',
     fontSize: 18,
   },
 });

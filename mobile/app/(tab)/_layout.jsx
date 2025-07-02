@@ -67,6 +67,7 @@ export default function TabLayout() {
                             >
                                 <Menu.Item onPress={() => { closeMenu(); router.push('/farmers'); }} title="Profile" />
                                 <Menu.Item onPress={() => { closeMenu(); router.push('/(components)/create_order'); }} title="create order" />
+                                <Menu.Item onPress={() => { closeMenu(); router.push('/(components)'); }} title = "My order"/>
                                 <Menu.Item onPress={() => { closeMenu(); router.push('/(auth)'); }} title="Logout" />
                                 <Menu.Item title={user?.email || ''} />
                             </Menu>
