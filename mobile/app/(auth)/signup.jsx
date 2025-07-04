@@ -70,7 +70,7 @@ export default function Signup() {
             </TouchableOpacity>
             <View style={styles.link}>
               <Link href="/(auth)">
-                <Text style={styles.createtext}>Log in my Account</Text>
+                <Text style={styles.createtext}>Already Have And Account</Text>
               </Link>
             </View>
           </ScrollView>
@@ -103,18 +103,20 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 450,
     resizeMode: 'contain',
-    marginBottom: 20,
+    marginBottom: -50,
   },
   submitbtn: {
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: '#000',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
     marginTop: 10,
   },
   text: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#000',
+    fontSize: 26,
     fontWeight: 'bold',
   },
   link: {
@@ -123,6 +125,7 @@ const styles = StyleSheet.create({
   },
   createtext: {
     color: '#000',
-    fontSize: 18,
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });

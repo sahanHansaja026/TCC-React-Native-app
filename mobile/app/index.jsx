@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Image source={require('./images/rice field-bro.png')} style={styles.image} />
+        <Image source={require('./images/Tree life-rafiki.png')} style={styles.image} />
         <TouchableOpacity style={styles.signupbtn}>
           <Link href="/(auth)/signup"><Text style={styles.signuptext}>Signup</Text></Link>
         </TouchableOpacity>
@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: '100%',
-    height: 450,
+    width: '90%',
+    height: 400,
     resizeMode: 'contain',
-    marginBottom: 10,
+    marginTop: 50,
   },
   loginbtn: {
     backgroundColor: '#fff',
@@ -47,18 +47,20 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
-    marginTop: 10,
     width: 250,
     borderWidth: 2,
     borderColor: '#000',
-    marginBottom:20,
+    marginBottom: 20,
+    marginTop: 50,
   },
   logintext: {
     color: '#000',
     fontSize: 20,
+    fontWeight:900,
   },
   signuptext: {
     color: '#fff',
-    fontSize:20,
+    fontSize: 20,
+    fontWeight: 900,
   }
 });

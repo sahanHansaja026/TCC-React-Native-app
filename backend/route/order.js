@@ -18,6 +18,7 @@ router.post(
         availableUntil,
         location,
         groupSale,
+        Discount,
         email,
       } = req.body;
       const imageFile = req.files?.image?.[0];
@@ -26,6 +27,7 @@ router.post(
         product,
         quantity: Number(quantity),
         price: Number(price),
+        Discount:Number(Discount),
         availableUntil: new Date(availableUntil),
         location,
         groupSale: groupSale === "true",

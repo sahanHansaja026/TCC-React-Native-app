@@ -12,7 +12,7 @@ import {
     Image,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import authService from "../services/authService"; // your auth service
 
@@ -21,6 +21,7 @@ export default function AddToMarketplace() {
     const [product, setProduct] = useState("");
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
+    const [Discount, setDiscount] = useState("");
     const [availableUntil, setAvailableUntil] = useState("");
     const [location, setLocation] = useState("");
     const [groupSale, setGroupSale] = useState(false);
@@ -55,7 +56,7 @@ export default function AddToMarketplace() {
     };
 
     const handleSubmit = async () => {
-        if (!product || !quantity || !price || !availableUntil || !location || !user?.email) {
+        if (!product || !quantity || !price || !Discount || !availableUntil || !location || !user?.email) {
             Alert.alert("Error", "Please fill all fields.");
             return;
         }
@@ -64,6 +65,7 @@ export default function AddToMarketplace() {
         formData.append("product", product);
         formData.append("quantity", quantity);
         formData.append("price", price);
+        formData.append("Discount", Discount);
         formData.append("availableUntil", availableUntil);
         formData.append("location", location);
         formData.append("groupSale", groupSale ? "true" : "false");
@@ -111,15 +113,18 @@ export default function AddToMarketplace() {
                     <ScrollView contentContainerStyle={styles.container}>
                         <Text style={styles.heading}>Add Product to Marketplace</Text>
 
-                        <Text style={styles.label}>Crop Name</Text>
+                        <Text style={styles.label}>Product Name</Text>
                         <TextInput style={styles.input} onChangeText={setProduct} value={product} placeholder="e.g., Tomatoes" />
 
-                        <Text style={styles.label}>Quantity (kg)</Text>
+                        <Text style={styles.label}>Quantity (kg,Count,othor)</Text>
                         <TextInput style={styles.input} keyboardType="numeric" onChangeText={setQuantity} value={quantity} placeholder="e.g., 100" />
 
                         <Text style={styles.label}>Price per unit (LKR)</Text>
                         <TextInput style={styles.input} keyboardType="numeric" onChangeText={setPrice} value={price} placeholder="e.g., 120" />
-
+                        
+                        <Text style={styles.label}>Discount for per unit (LKR)</Text>
+                        <TextInput style={styles.input} keyboardType="numeric" onChangeText={setDiscount} value={Discount} placeholder="e.g., 100" />
+                        
                         <Text style={styles.label}>Available Until</Text>
                         <TextInput style={styles.input} onChangeText={setAvailableUntil} value={availableUntil} placeholder="YYYY-MM-DD" />
 

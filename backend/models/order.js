@@ -7,6 +7,7 @@ const orderSchema = new mongoose.Schema({
   availableUntil: Date,
   location: String,
   groupSale: Boolean,
+  Discount: Number,
   email: {
     type: String,
     required: true,
