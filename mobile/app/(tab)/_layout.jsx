@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Menu, Provider } from 'react-native-paper';
-import { View, Pressable, Image } from 'react-native';
+import { View, Pressable, Image,StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect } from 'react';
 import authService from "../services/authService";
@@ -43,7 +43,7 @@ export default function TabLayout() {
         <Provider>
             <Tabs
                 screenOptions={{
-                    tabBarActiveTintColor: 'blue',
+                    tabBarActiveTintColor: 'black',
                     headerRight: () => (
                         <View style={{ marginRight: 10 }}>
                             <Menu
@@ -56,17 +56,20 @@ export default function TabLayout() {
                                                 uri: image || 'https://i.pravatar.cc/300', // fallback if no DB image
                                             }}
                                             style={{
-                                                width: 32,
-                                                height: 32,
+                                                width: 35,
+                                                height: 35,
                                                 borderRadius: 16,
                                                 backgroundColor: '#ccc',
+                                                borderColor: '#000',
+                                                borderWidth: 2,
                                             }}
                                         />
                                     </Pressable>
                                 }
                             >
                                 <Menu.Item onPress={() => { closeMenu(); router.push('/farmers'); }} title="Profile" />
-                                <Menu.Item onPress={() => { closeMenu(); router.push('/settings'); }} title="Settings" />
+                                <Menu.Item onPress={() => { closeMenu(); router.push('/(components)/create_order'); }} title="create order" />
+                                <Menu.Item onPress={() => { closeMenu(); router.push('/(components)'); }} title = "My order"/>
                                 <Menu.Item onPress={() => { closeMenu(); router.push('/(auth)'); }} title="Logout" />
                                 <Menu.Item title={user?.email || ''} />
                             </Menu>
@@ -83,17 +86,10 @@ export default function TabLayout() {
                     }}
                 />
                 <Tabs.Screen
-                    name="settings"
-                    options={{
-                        title: 'Settings',
-                        tabBarIcon: ({ color }) => <FontAwesome name="cog" color={color} size={24} />,
-                    }}
-                />
-                <Tabs.Screen
                     name="farmers"
                     options={{
-                        title: 'Farmers',
-                        tabBarIcon: ({ color }) => <FontAwesome name="users" color={color} size={24} />,
+                        title: 'Cart',
+                        tabBarIcon: ({ color }) => <FontAwesome name="cart-plus" color={color} size={24} />,
                     }}
                 />
             </Tabs>

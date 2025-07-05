@@ -104,20 +104,22 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 250,
+    height: 450,
     resizeMode: 'contain',
-    marginBottom: 20,
+    marginBottom: -50,
   },
   submitbtn: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: '#000',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
     marginTop: 10,
   },
   text: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#000',
+    fontSize: 26,
     fontWeight: 'bold',
   },
   link: {
@@ -125,7 +127,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   createtext: {
-    color: '#21618c',
-    fontSize: 18,
+    color: '#000',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
