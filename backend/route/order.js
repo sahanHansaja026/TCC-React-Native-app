@@ -20,18 +20,23 @@ router.post(
         groupSale,
         Discount,
         email,
+        minMembers,
+        maxMembers,
+        groupExpireDate,
       } = req.body;
+
       const imageFile = req.files?.image?.[0];
 
       const newPost = new Posts({
         product,
         quantity: Number(quantity),
         price: Number(price),
-        Discount:Number(Discount),
+        Discount: Number(Discount),
         availableUntil: new Date(availableUntil),
         location,
         groupSale: groupSale === "true",
         email,
+        Discription,
         image: imageFile
           ? {
               data: imageFile.buffer,
@@ -39,6 +44,13 @@ router.post(
             }
           : null,
       });
+
+      //  If groupSale is true, add extra fields
+      if (groupSale === "true") {
+        newPost.minMembers = Number(minMembers);
+        newPost.maxMembers = Number(maxMembers);
+        newPost.groupExpireDate = new Date(groupExpireDate);
+      }
 
       await newPost.save();
       return res.status(200).json({ success: "Order saved successfully" });
@@ -108,6 +120,5 @@ router.get("/get/email", async (req, res) => {
     return res.status(500).json({ error: "Server error, please try again" });
   }
 });
-
 
 module.exports = router;

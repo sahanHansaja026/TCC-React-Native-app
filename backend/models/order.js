@@ -8,6 +8,10 @@ const orderSchema = new mongoose.Schema({
   location: String,
   groupSale: Boolean,
   Discount: Number,
+  Discription: String,
+  minMembers: Number,
+  maxMembers: Number,
+  groupExpireDate:Date,
   email: {
     type: String,
     required: true,
